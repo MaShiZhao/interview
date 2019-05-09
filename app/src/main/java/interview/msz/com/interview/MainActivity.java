@@ -1,18 +1,16 @@
 package interview.msz.com.interview;
 
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import interview.msz.com.activity.ActivityActivity;
@@ -43,30 +41,20 @@ import interview.msz.com.thread.ThreadAndProcessActivity;
 import interview.msz.com.thread.ThreadExecutorActivity;
 import interview.msz.com.touch.TouchActivity;
 
-public class MainActivity extends AppCompatActivity
-{
-    public static final String TAG = "MSZ_TAG_MAIN";
+public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView myRecyclerView;
     private MainAdapter mainAdapter;
     private List<MainBean> data = new ArrayList<>();
     private TextView txv;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txv = (TextView) findViewById(R.id.txv);
         myRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        long timestamp = 15130505768L*1000;
-        final String format = sdf.format(new Date(timestamp));
-        txv.setText(format);
-        myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
         data.add(new MainBean("线程", ThreadActivity.class));
         data.add(new MainBean("进程和线程区别", ThreadAndProcessActivity.class));
         data.add(new MainBean("线程池", ThreadExecutorActivity.class));
@@ -96,52 +84,15 @@ public class MainActivity extends AppCompatActivity
         data.add(new MainBean("随手记", OtherActivity.class));
 
         mainAdapter = new MainAdapter(MainActivity.this, data);
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         myRecyclerView.setAdapter(mainAdapter);
 
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState)
-    {
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        Log.d(TAG, "onCreate");
     }
 
 
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        Log.d(TAG, "onResume");
-    }
-
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        Log.d(TAG, "onPause");
-    }
-
-
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-        Log.d(TAG, "onStart");
-    }
-
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-        Log.d(TAG, "onStop");
-    }
-
-
-    @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy");
-    }
 }
