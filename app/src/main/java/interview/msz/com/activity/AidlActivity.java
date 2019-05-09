@@ -265,7 +265,7 @@ public class AidlActivity extends BaseActivity
         setTitle("AIDL");
         setContentTextView(string);
 
-        contentTextView.setOnClickListener(new View.OnClickListener()
+        getContentTextView().setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)

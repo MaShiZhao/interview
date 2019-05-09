@@ -33,7 +33,7 @@ public class CodeActivity extends BaseActivity
             setContentTextView(contentString);
         }
 
-        contentTextView.setOnClickListener(new View.OnClickListener()
+        getContentTextView().setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
