@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="interview.msz.com.interview">
+    package="interview.kotlin.com.interview">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name="interview.kotlin.com.interview.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -20,33 +20,33 @@
         </activity>
 
         <activity
-            android:name="interview.msz.com.baseActivity.CodeActivity"
+            android:name="interview.kotlin.com.baseActivity.CodeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="interview.msz.com.thread.ThreadActivity"
+            android:name="interview.kotlin.com.thread.ThreadActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
 
         <activity
-            android:name="interview.msz.com.thread.ThreadAndProcessActivity"
+            android:name="interview.kotlin.com.thread.ThreadAndProcessActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="interview.msz.com.thread.ThreadExecutorActivity"
+            android:name="interview.kotlin.com.thread.ThreadExecutorActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="interview.msz.com.activity.NounActivity"
+            android:name="interview.kotlin.com.activity.NounActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="interview.msz.com.activity.SystemActivity"
+            android:name="interview.kotlin.com.activity.SystemActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
@@ -54,156 +54,156 @@
         <!--aidl-->
 
         <activity
-            android:name="interview.msz.com.activity.AidlActivity"
+            android:name="interview.kotlin.com.activity.AidlActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="interview.msz.com.aidl.AidlClientActivity"
+            android:name="interview.kotlin.com.aidl.AidlClientActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <service
-            android:name="interview.msz.com.aidl.MyAidlService"
+            android:name="interview.kotlin.com.aidl.MyAidlService"
             android:enabled="true"
             android:process=":aidl"
             />
         <!--aidl-->
 
         <activity
-            android:name="interview.msz.com.aidl.BinderActivity"
+            android:name="interview.kotlin.com.aidl.BinderActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.optimization.MemoryOptimizationActivity"
+            android:name="interview.kotlin.com.optimization.MemoryOptimizationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.optimization.BatteryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
-
-        <activity
-            android:name="interview.msz.com.activity.HttpActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
-        <activity
-            android:name="interview.msz.com.activity.ViewActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
-        <activity
-            android:name="interview.msz.com.activity.XmlActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity
-            android:name="interview.msz.com.activity.GCActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
-        <activity
-            android:name="interview.msz.com.activity.HashMapActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
-        <activity
-            android:name="interview.msz.com.touch.TouchActivity"
+            android:name="interview.kotlin.com.optimization.BatteryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
 
         <activity
-            android:name="interview.msz.com.net.SocketActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity
-            android:name="interview.msz.com.thread.AsyncTaskActivity"
+            android:name="interview.kotlin.com.activity.HttpActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.VersionActivity"
+            android:name="interview.kotlin.com.activity.ViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.sourcecode.OkhttpActivity"
+            android:name="interview.kotlin.com.activity.XmlActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name="interview.kotlin.com.activity.GCActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.count.CountActivity"
+            android:name="interview.kotlin.com.activity.HashMapActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.sourcecode.GlideActivity"
+            android:name="interview.kotlin.com.touch.TouchActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
 
         <activity
-            android:name="interview.msz.com.activity.ReactNativeActivity"
+            android:name="interview.kotlin.com.net.SocketActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name="interview.kotlin.com.thread.AsyncTaskActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.Apk"
+            android:name="interview.kotlin.com.activity.VersionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.DataStructureActivity"
+            android:name="interview.kotlin.com.sourcecode.OkhttpActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.DrawableActivity"
+            android:name="interview.kotlin.com.count.CountActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.TestActivity"
+            android:name="interview.kotlin.com.sourcecode.GlideActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+
+        <activity
+            android:name="interview.kotlin.com.activity.ReactNativeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.ActivityActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity
-            android:name="interview.msz.com.activity.OtherActivity"
+            android:name="interview.kotlin.com.activity.Apk"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />
 
         <activity
-            android:name="interview.msz.com.activity.DesignPatternActivity"
+            android:name="interview.kotlin.com.activity.DataStructureActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+        <activity
+            android:name="interview.kotlin.com.activity.DrawableActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+        <activity
+            android:name="interview.kotlin.com.activity.TestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+        <activity
+            android:name="interview.kotlin.com.activity.ActivityActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name="interview.kotlin.com.activity.OtherActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+        <activity
+            android:name="interview.kotlin.com.activity.DesignPatternActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"
             />

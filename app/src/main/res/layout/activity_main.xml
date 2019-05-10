@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="interview.msz.com.interview.MainActivity">
+    tools:context="interview.kotlin.com.interview.interview.flutter.com.interview.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myRecyclerView"
