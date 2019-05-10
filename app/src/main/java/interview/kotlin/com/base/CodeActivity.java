@@ -1,4 +1,4 @@
-package interview.kotlin.com.baseActivity;
+package interview.kotlin.com.base;
 
 import android.content.Context;
 import android.content.Intent;

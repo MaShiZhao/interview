@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import interview.kotlin.com.baseActivity.BaseActivity;
+import interview.kotlin.com.base.BaseActivity;
 
 /**
  * Created by MaShiZhao on 2018/3/26.

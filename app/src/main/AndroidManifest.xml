@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name="interview.kotlin.com.baseActivity.CodeActivity"
+            android:name="interview.kotlin.com.base.CodeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
 

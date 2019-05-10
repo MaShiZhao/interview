@@ -1,4 +1,4 @@
-package interview.kotlin.com.baseActivity
+package interview.kotlin.com.base
 
 import android.annotation.TargetApi
 import android.content.Intent
@@ -25,6 +25,8 @@ import interview.kotlin.com.interview.R
 
 open class BaseActivity : AppCompatActivity() {
 
+    private val TAG = BaseActivity::class.java.simpleName;
+
     lateinit var contentTextView: TextView;
     internal var toolbar: Toolbar? = null
     internal var showMenu: Boolean? = null
@@ -35,9 +37,9 @@ open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thread)
-        contentTextView = findViewById(R.id.content) as TextView
+        contentTextView = findViewById(R.id.content)
 
-        toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         showMenu = true
@@ -58,8 +60,7 @@ open class BaseActivity : AppCompatActivity() {
                 if (code!!.toLowerCase().startsWith("http") && code!!.length < 100) {
                     val intent = Intent()
                     intent.action = "android.intent.action.VIEW"
-                    val content_url = Uri.parse(code)
-                    intent.data = content_url
+                    intent.data = Uri.parse(code)
                     startActivity(intent)
                 } else {
                     CodeActivity.startActivity(this@BaseActivity, code)
@@ -67,9 +68,7 @@ open class BaseActivity : AppCompatActivity() {
 
             }
 
-            android.R.id.home ->
-
-                finish()
+            android.R.id.home -> finish()
 
             else -> {
             }
@@ -186,8 +185,4 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-
-        val TAG = BaseActivity::class.java.getSimpleName()
-    }
 }

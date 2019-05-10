@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import interview.kotlin.com.aidl.AidlClientActivity;
-import interview.kotlin.com.baseActivity.BaseActivity;
+import interview.kotlin.com.base.BaseActivity;
 
 /**
  * Created by MaShiZhao on 2018/3/26.
