@@ -43,6 +43,7 @@ open class BaseActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         showMenu = true
+        Log.d(TAG, localClassName + "onCreate")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -99,15 +100,14 @@ open class BaseActivity : AppCompatActivity() {
     //跳转
     open fun gotoActivity(content: String?) {
         code = content
-        if (content != null) {
-            contentTextView.text = code
-        }
+//        if (content != null && content.isNotEmpty()) {
+//            contentTextView.text = code
+//        }
     }
 
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        Log.d(TAG, localClassName + "onCreate")
     }
 
 
@@ -158,31 +158,31 @@ open class BaseActivity : AppCompatActivity() {
     /**
      * StandardCharsets.UTF_8 只有在 19以上才有
      */
-    @TargetApi(Build.VERSION_CODES.KITKAT)
-    protected fun setContent() {
-        val sb = StringBuilder()
-        var br: BufferedReader? = null;
-        try {
-            val `is` = assets.open("code/ActivityActivity.java")
-            br = BufferedReader(InputStreamReader(`is`, StandardCharsets.UTF_8))
-            var line: String? = null;
-            while ({ line = br.readLine(); line }() != null) {
-                sb.append(line).append('\n')
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Toast.makeText(this@BaseActivity, e.toString(), Toast.LENGTH_SHORT).show()
-        } finally {
-            if (br != null) {
-                try {
-                    br.close()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-
-            }
-            setContentTextView(sb.toString())
-        }
-    }
+//    @TargetApi(Build.VERSION_CODES.KITKAT)
+//    protected fun setContent() {
+//        val sb = StringBuilder()
+//        var br: BufferedReader? = null;
+//        try {
+//            val `is` = assets.open("code/ActivityActivity.java")
+//            br = BufferedReader(InputStreamReader(`is`, StandardCharsets.UTF_8))
+//            var line: String? = null;
+//            while ({ line = br.readLine(); line }() != null) {
+//                sb.append(line).append('\n')
+//            }
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//            Toast.makeText(this@BaseActivity, e.toString(), Toast.LENGTH_SHORT).show()
+//        } finally {
+//            if (br != null) {
+//                try {
+//                    br.close()
+//                } catch (e: IOException) {
+//                    e.printStackTrace()
+//                }
+//
+//            }
+//            setContentTextView(sb.toString())
+//        }
+//    }
 
 }

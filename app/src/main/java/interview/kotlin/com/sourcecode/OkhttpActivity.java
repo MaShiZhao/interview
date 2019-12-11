@@ -2,23 +2,30 @@ package interview.kotlin.com.sourcecode;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
+
+import java.io.IOException;
 
 import interview.kotlin.com.base.BaseActivity;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.internal.cache.CacheInterceptor;
 
 /**
  * Created by MaShiZhao on 2018/4/18.
  */
-public class OkhttpActivity extends BaseActivity
-{
+public class OkhttpActivity extends BaseActivity {
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setTitle("Okhttp");
 
 
-        String contentString ="Request、Response和Call。\nRequest\n" +
+        String contentString = "Request、Response和Call。\nRequest\n" +
                 "每一个HTTP请求包含一个URL、一个方法（GET或POST或其他）、一些HTTP头。请求还可能包含一个特定内容类型的数据类的主体部分。\n" +
                 "\n" +
                 "Response\n" +
@@ -30,5 +37,10 @@ public class OkhttpActivity extends BaseActivity
         setContentTextView(contentString);
 
         gotoActivity("https://blog.csdn.net/mwq384807683/article/details/71173442?locationNum=8&fps=1");
+
+
+        RecyclerView recyclerView ;
+
+
     }
 }

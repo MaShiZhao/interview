@@ -1,25 +1,28 @@
 package interview.kotlin.com.activity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import interview.kotlin.com.aidl.AidlClientActivity;
 import interview.kotlin.com.base.BaseActivity;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by MaShiZhao on 2018/3/26.
  */
-public class AidlActivity extends BaseActivity
-{
+public class AidlActivity extends BaseActivity {
     private TextView textView;
     private String string;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         string = "AIDL 支持的数据类型\n" +
@@ -231,7 +234,7 @@ public class AidlActivity extends BaseActivity
                 "        mAidl = null;\n" +
                 "    }\n" +
                 "};\n" +
-                 "在 Activity 中创建一个服务连接对象，在其中调用 IMyAidl.Stub.asInterface() 方法将 Binder 转为 AIDL 类。\n" +
+                "在 Activity 中创建一个服务连接对象，在其中调用 IMyAidl.Stub.asInterface() 方法将 Binder 转为 AIDL 类。\n" +
                 "\n" +
                 "②接着绑定服务\n" +
                 "\n" +
@@ -265,17 +268,15 @@ public class AidlActivity extends BaseActivity
         setTitle("AIDL");
         setContentTextView(string);
 
-        getContentTextView().setOnClickListener(new View.OnClickListener()
-        {
+        getContentTextView().setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
 
                 startActivity(new Intent(AidlActivity.this, AidlClientActivity.class));
             }
         });
 
-        String codeString ="package interview.msz.com.aidl;\n" +
+        String codeString = "package interview.msz.com.aidl;\n" +
                 "\n" +
                 "import android.contentTextView.ComponentName;\n" +
                 "import android.contentTextView.Intent;\n" +
@@ -407,35 +408,31 @@ public class AidlActivity extends BaseActivity
                 "    };\n" +
                 "\n" +
                 "}\n";
-        gotoActivity(codeString+"\n\n\n\n"+codeString2);
+        gotoActivity(codeString + "\n\n\n\n" + codeString2);
 
+     }
 
-    }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState)
-    {
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.d("TAG", "onSaveInstanceState");
     }
 
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
         Log.d("TAG", "pause");
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState)
-    {
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Log.d("TAG", "onRestoreInstanceState ");
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         Log.d("TAG", "resume");
     }

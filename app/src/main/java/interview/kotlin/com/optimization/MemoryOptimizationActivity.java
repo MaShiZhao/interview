@@ -32,7 +32,7 @@ public class MemoryOptimizationActivity extends BaseActivity
                 "方法中的局部变量使用final修饰后，放在堆中，而不是栈中。\n" +
                 "堆内存用来存放所有new 创建的对象和 数组的数据和final修饰的方法\n\n\n";
         String contentS = " 1. 单例 context \n" +
-                "2. 静态变量 activity fragment 的使用 \n " +
+                "2. 静态变量 activity fragment 的使用\n" +
                 "3. 非静态内部类导致内存泄露\n  " +
                 "4. 未取消注册或回调导致内存泄露\n  广播 " +
                 "5. 涉及异步 线程 属性动画 Timer和TimerTask 等需要取消 \n" +

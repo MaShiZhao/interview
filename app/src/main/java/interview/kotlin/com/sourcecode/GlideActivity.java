@@ -1,18 +1,50 @@
 package interview.kotlin.com.sourcecode;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.util.LruCache;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.cache.DiskLruCacheFactory;
+import com.bumptech.glide.request.RequestOptions;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.Stack;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import dalvik.system.DexClassLoader;
 import interview.kotlin.com.base.BaseActivity;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by MaShiZhao on 2018/4/18.
  */
-public class GlideActivity extends BaseActivity
-{
+public class GlideActivity extends BaseActivity {
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setTitle("Glide");
@@ -32,13 +64,39 @@ public class GlideActivity extends BaseActivity
                 "\n" +
                 "with：创建RequestManager，并根据传入参数，初始化好对应的生命周期\n" +
                 "load：用于初始化好图片下载、图片解析、图片转换的各个对象，用于后续流程\n" +
-                "into：在线程池中去执行EngineRunnale的run方法，用HttpURLConnection下载图片、用BitmapFactory.decodeStream完成解码、然后把Bitmap转换成可统一展示的GlideBitmapDrawable、最后通过Handler发消息，在主线程中给ImageView设置图片" ;
+                "into：在线程池中去执行EngineRunnale的run方法，用HttpURLConnection下载图片、用BitmapFactory.decodeStream完成解码、然后把Bitmap转换成可统一展示的GlideBitmapDrawable、最后通过Handler发消息，在主线程中给ImageView设置图片";
 
 
-        setContentTextView(contentString+"http://www.lightskystreet.com/2015/10/12/glide_source_analysis/");
+        setContentTextView(contentString + "http://www.lightskystreet.com/2015/10/12/glide_source_analysis/");
 
         gotoActivity("https://blog.csdn.net/luofen521/article/details/71213440");
 
+        Parent parent = new Child();
+        parent.getName();
+        HashSet<Parent> hashSet = new HashSet<>();
 
+        // Semaphore  并行访问数量
+        // ReentrantLock  所
+        // Atomic 原理
+        // CopyOnWriteArrayList   synchronization
+        // ReentrantReadWriteLock
+
+
+
+
+     }
+
+    class Parent {
+        void getName() {
+            Log.d("msz", "parent");
+        }
     }
+
+    class Child extends Parent {
+        void getName() {
+            Log.d("msz", "Child");
+        }
+    }
+
+
 }

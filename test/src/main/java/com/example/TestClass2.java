@@ -9,78 +9,87 @@ import java.util.Set;
 /**
  * Created by MaShiZhao on 2018/4/20.
  */
-public class TestClass2
-{
+public class TestClass2 {
 
-    String string =  "good";
-    char ch[] = {'1', '2'};
+    public static void main(String[] args) {
+//        int result =2;
+//        int digit =2;
+//        result -= digit;
+//        String s = "2";
+//        System.out.println(Character.digit(s.charAt(0),10));
 
-    public static void main(String[] args)
-    {
 
+//        Parent parent = new Child();
+//        Child child = new Child();
+////        parent.getName();
+//
+//        System.out.println(parent.Num);
+//        System.out.println(child.Num);
+//        Child child = new Child();
+//        child.getName();
 
-        Set<Integer> set =    new HashSet<>();
-        set.add(null);
-        set.add(0);
-        set.add(null);
+//        String string = new String("11");
+//        String string2 = string;
+//        System.out.println(string == string2);
 
-        List<Integer> list = new ArrayList<>();
-        list.add(0);
-        list.add(null);
+        int[] ints = {2,6,1,3,9,34,27,18,28,87,2,90};
+        quickSort(ints, 0, ints.length - 1);
 
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        hashMap.put(1,1);
-        hashMap.put(2,2);
-        hashMap.put(null,2);
-        hashMap.put(null,4);
-        hashMap.put(4,null);
-
-        System.out.println(hashMap.size());
-
+        System.out.println(getStepNumber(3));
     }
+    public static long getStepNumber(int n)  {
+        if (n == 1) {
+            return 1;
+        }
 
-    private void change(String string, char[] ch)
-    {
-        string = "g";
-        ch[0] = '2';
+        if (n == 2) {
+            return 2;
+        }
+
+        if (n == 3) {
+            return 4;
+        }
+
+        if (n > 3) {
+            return getStepNumber(n - 1) + getStepNumber(n - 2) + getStepNumber(n - 3);
+        }
+        return 0;
     }
-
-    private static int water = 100;
-
-    private static void hxy(int count)
-    {
-        if (count < 2)
-        {
+    public static void quickSort(int[] arr, int low, int high) {
+        int i, j, temp, t;
+        if (low > high) {
             return;
         }
+        i = low;
+        j = high;
+        //temp就是基准位
+        temp = arr[low];
 
-        int i = count / 2;
-        int j = count % 2;
+        while (i < j) {
+            //先看右边，依次往左递减
+            while (temp <= arr[j] && i < j) {
+                j--;
+            }
+            //再看左边，依次往右递增
+            while (temp >= arr[i] && i < j) {
+                i++;
+            }
+            //如果满足条件则交换
+            if (i < j) {
+                t = arr[j];
+                arr[j] = arr[i];
+                arr[i] = t;
+            }
 
-        water = water + i;
-
-        hxy(i + j);
-    }
-
-
-    /**
-     * @param x 总钱数
-     * @param y 每瓶水的价格
-     * @param k 几个瓶盖可以兑换
-     * @return count 总共水的瓶水
-     */
-    private static int hxy2(int x, int y, int k)
-    {
-        int count = x / y;
-
-        int j = count; //当前的瓶盖
-
-        while (j > k - 1)
-        {
-            count += j / k;
-            j = j % k + j / k;
         }
-
-        return count;
+        //最后将基准为与i和j相等位置的数字交换
+        arr[low] = arr[i];
+        arr[i] = temp;
+        //递归调用左半数组
+        quickSort(arr, low, j - 1);
+        //递归调用右半数组
+        quickSort(arr, j + 1, high);
     }
+
+
 }
